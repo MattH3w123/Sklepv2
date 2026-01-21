@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Remake</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script type="text/javascript" src="./js/script.js" defer></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <span class="top-questions top-questions-disaper">
+                    <div class="center">
+                        <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">history</span> <span class="hver-line">szybka wysyłka</span></a>
+                        <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">delivery_truck_speed</span> <span class="hver-line">30 dni na zwrot</span></a>
+                        <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">star</span> <span class="hver-line">4.3 opinie</span></a>
+                        <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">chat_add_on</span> <span class="hver-line">Kontakt</span></a>
+                        <a href="#" class="tq-l-bt questions"><span class="hver-line">Zapytania (<span id="quests-watch">0</span>)</span></a>
+                        <div class="tq-l-bt" onclick=""><span class="contr"><span class="hver-line"><span id="flag"></span>Polski</span><span class="icon-sz material-symbols-outlined">arrow_drop_down</span></span></div>
+                        <div class="tq-l-bt"><span class="contr"><span class="hver-line">PLN</span><span class="icon-sz material-symbols-outlined">arrow_drop_down</span></span></div>
+                    </div>
+                </span>
+                <span class="header-padding">
+                     <div class="header-top">
+                        <a href="#"><img src="./img/logogog.png" alt="logo"></a>
+                        <div class="search-bar">
+                            <form>
+                                <div class="search">
+                                    <span class="search-icon material-symbols-outlined">search</span>
+                                    <input type="search" id="srcha" placeholder="search">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="cntrls">
+                            <a href="#"><span class="icon-ctrl material-symbols-outlined">favorite</span></a>
+                            <a href="#"><span class="icon-ctrl material-symbols-outlined">shopping_bag_speed</span></a>
+                            <a href="#"><span class="icon-ctrl material-symbols-outlined">account_circle</span></a>
+                        </div>
+                    </div>
+                    <div class="header-top-mobile">
+                        <div class="header-mobile-menu">
+                            <button id="open-sidebar" onclick="openSideBar()" aria-label="open sidebar" aria-expanded="false" aria-controls="NavBar">
+                                <span  class="material-symbols-outlined mobile-header-top-btn">menu</span>
+                            </button>
+                            <div class="navbar-mobile" id="NavBar">
+                                <button onclick="closeSideBar()" aria-label="close sidebar">
+                                    <span class="material-symbols-outlined navbar-mobile-close">close</span>
+                                </button>
+                                <nav>
+                                    <ul>
+                                        <li><a href="#" aria-current="page">Kategorie<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                        <li><a href="#">Zakres działalności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                            <ul class="drop">
+                                                <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                                <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                                <li><a href="#">itemek</a></li>
+                                            </ul>   
+                                        </li>
+                                        <li><a href="#">Do pobrania<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                        <li><a href="#">Kontakt<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                        <li><a href="#">firma<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                        <li><a href="#">Aktualności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                    </ul>
+                                </nav>
+                                <div class="cntrls navbar-cntrls">
+                                    <a href="#"><span class="icon-ctrl material-symbols-outlined">favorite</span></a>
+                                    <a href="#"><span class="icon-ctrl material-symbols-outlined">shopping_bag_speed</span></a>
+                                    <a href="#"><span class="icon-ctrl material-symbols-outlined">account_circle</span></a>
+                                </div>
+                            </div>
+                            <div id="overlay" onclick="closeSideBar()" aria-hidden="true"></div>
+                        </div>
+                        <div class="search-bar">
+                            <form>
+                                <div class="search">
+                                    <span class="search-icon material-symbols-outlined">search</span>
+                                    <input type="search" id="srcha" placeholder="search">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="header-bottom">
+                        <nav>
+                            <ul>
+                                <li><a href="#">Kategorie<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li><a href="#">Zakres działalności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                    <ul class="drop">
+                                        <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                        <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                    </ul>   
+                                </li>
+                                <li><a href="#">Do pobrania<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li><a href="#">Kontakt<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li><a href="#">firma<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li><a href="#">Aktualności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </span>
+            </header>
+            <main>
+                <span class="attention">© 2026 This website is a project by マシュー・イジク <br> Educational use permitted.</span>
+                <section id="baner-slider">
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><a href="#"><div class="element s-s-bckg-1">
+                                <h1>Sprzęt ktory napędza sport.</h1>
+                                <p class="lead-slider">
+                                    Akcesoria i sprzet sportowy do treningu, rekreacji <br> i codziennych aktywności.
+                                
+                                    <p class="mini-l-slider">Trening • Fitness • Outdoor • Sporty zespołowe
+                                </p>
+                                <span class="slider-btn-main">Kategorie sportów</span>
+                            </div></a></div>
+                            <div class="swiper-slide"><a href="#"><div class="element s-s-bckg-2">
+                                <h1>Kompleksowe wyposażenie <br> obiektów sportowych</h1>
+                                <p class="mini-l-slider">
+                                    Projekt. Sprzęt. Realizacja.
+                                </p>
+                                <span class="slider-btn-othrs">Zobacz wyposażenie</span>
+                            </div></a></div>
+                            <div class="swiper-slide"><a href="#"><div class="element s-s-bckg-3">
+                                <h1>
+                                    Trybuny i wyposażenie sal <br>
+                                    audytoryjnych i wykładowych
+                                </h1>
+                                <p class="mini-l-slider">
+                                    Komfort. Funkcjonalność. Design.
+                                </p>
+                                <span class="slider-btn-othrs">Zobacz trybuny</span>
+                            </div></a></div>
+                            <div class="swiper-slide"><a href="#"><div class="element s-s-bckg-4">
+                                <h1>Piłki</h1>
+                                <p class="mini-l-slider">
+                                    Do koszykówki, piłki nożnej, siatkówki
+                                </p>
+                                <span class="slider-btn-othrs">Zobacz oferte</span>
+                            </div></a></div>
+                            <div class="swiper-slide"><a href="#"><div class="element s-s-bckg-5">
+                                <h1>Twój trening, Twój sprzęt</h1>
+                                <p class="mini-l-slider">
+                                    Znajdź idealny sprzęt do domu i siłowni
+                                </p>
+                                <span class="slider-btn-othrs">Zobacz kategorie</span>
+                            </div></a></div>                       
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </section>
+                <section id="boxes-cetogrs">
+                    <div class="ctgrs-cont">
+                        <div class="box-ctgr title-box">
+                            <a href="#">
+                               <h1 class="title-pop-box">Popularne wśród klientów</h1>
+                               <span class="more-see-popu"> Zobacz wszystko</span>
+                            </a>
+                        </div>
+                        <div class="box-ctgr bx-ctgr-1">
+                            <a href="#">
+                                <h1>Koszykówka</h1>
+                                <h4>zobacz </h4>
+                                <span class="popular-pop-show">Popular</span>
+                            </a>
+                        </div>
+                        <div class="box-ctgr bx-ctgr-2">
+                            <a href="#">
+                                <h1>Football</h1>
+                                <h4>zobacz </h4>
+                                <span class="popular-pop-show">Popular</span>
+                            </a>
+                        </div>
+                        <div class="box-ctgr bx-ctgr-3">
+                            <a href="#">
+                                <h1>Gym</h1>
+                                <h4>zobacz </h4>
+                                <span class="popular-pop-show">Popular</span>
+                            </a>
+                        </div>
+                        <div class="box-ctgr bx-ctgr-4">
+                            <a href="#">
+                                <h1>Gimnastyka</h1>
+                                <h4>zobacz </h4>
+                                <span class="popular-pop-show">Popular</span>
+                            </a>
+                        </div>
+                        <div class="box-ctgr bx-ctgr-5">
+                            <a href="#">
+                                <h1>Piłka <br>Ręczna</h1>
+                                <h4>zobacz </h4>
+                                <span class="popular-pop-show">Popular</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="widget-info">
+                    <div class="widget-conter">
+                        <div class="wdg-box bx-wd-hr">
+                            <a href="#">
+                                <img src="./img/newImgs/widget/box.png" alt="delivery">
+                                <div class="text-bx">
+                                    <h1>Wysyłka w dowolne miejsce</h1>
+                                    <p>niezależnie od wartości zamówienia</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wdg-box bx-wd-hr">
+                            <a href="#">
+                                <img src="./img/newImgs/widget/diy.png" alt="montaz">
+                                <div class="text-bx">
+                                    <h1>Dostawa Montaż Serwis</h1>
+                                    <p>Oferujemy usługę instalacji</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wdg-box bx-wd-hr">
+                            <a href="#">
+                                <img src="./img/newImgs/widget/wallet.png" alt="gwarancja">
+                                <div class="text-bx">
+                                    <h1>Gwarancja zwrotu towarów</h1>
+                                    <p>Zwrot środków w ciągu 7 dni</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="wdg-box">
+                            <a href="#">
+                                <img src="./img/newImgs/widget/customer-support.png" alt="support">
+                                <div class="text-bx">
+                                    <h1>Zespół Obsługi Klienta</h1>
+                                    <p>dostępny pn-pt 6-18 sob. 9-14 <br><b>tel +48 12 274 00 00</b></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="opis-1">
+                    <div class="contr-opis">
+                        <div class="img-shop">
+                            <img src="./img/newImgs/opis/Gemini_Generated_Image_pxgtahpxgtahpxgt.png" alt="shop">
+                        </div>
+                    </div>
+                    <div class="contr-opis-txt">
+                        <div class="opis-text-cont">
+                            <div class="text-opis-style txt-style-op-res">
+                                <div class="img-cont">
+                                    <img src="./img/newImgs/opis/31.png" alt="shop">
+                                </div>
+                                <div class="text-cont">
+                                    <h1>Internetowy sklep sportowy</h1>
+                                    <p>
+                                        Sprzęt amatorski często różni się od profesjonalnego nie tylko jakością wykonania, ale także trwałością i funkcjonalnością, co ma kluczowe znaczenie dla osiągnięcia optymalnych wyników sportowych. Profesjonalne doradztwo w sklepie sportowym online pozwala na uniknięcie błędów zakupowych, które mogą prowadzić do kontuzji lub szybkiego zużycia sprzętu.
+
+                                       <p>Konsultacje z ekspertami są nieocenione przy wyborze wyposażenia dla klubów i szkół, ponieważ pozwalają na dokładne określenie potrzeb oraz wybór sprzętu, który zapewni bezpieczeństwo i efektywność treningów. Profesjonalni doradcy mają wiedzę na temat najnowszych technologii i trendów w branży sportowej, co pozwala na zakup sprzętu spełniającego najwyższe standardy jakościowe.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-opis-style txt-style-op-res">
+                                <div class="text-cont">
+                                    <h1>Sprzęt Profesjonalny</h1>
+                                    <p>
+                                        Planowanie zakupów sprzętu sportowego z uwzględnieniem sezonu i intensywności użytkowania pozwala utrzymać wysoką jakość treningów przez cały rok. Profesjonalny sklep oferuje szeroki asortyment produktów do różnych dyscyplin i warunków pogodowych, umożliwiając kompleksowe wyposażenie obiektu sportowego.
+
+                                       <p>Odpowiednio dobrany sprzęt zwiększa bezpieczeństwo i komfort treningów, minimalizując ryzyko kontuzji. Wysokiej jakości produkty posiadają certyfikaty potwierdzające trwałość i bezpieczeństwo, co przekłada się na długotrwałe oszczędności i satysfakcję użytkowników.
+                                    </p>
+                                </div>
+                                <div class="img-cont">
+                                    <img src="./img//newImgs/opis/32.png" alt="shop">
+                                </div>
+                            </div>
+
+                            <div class="text-opis-style">
+                                <div class="img-cont">
+                                    <img src="./img//newImgs/opis/33.png" alt="shop">
+                                </div>
+                                <div class="text-cont">
+                                    <h1>Trening Bez Ryzyka</h1>
+                                    <p>
+                                        Dobór sprzętu pod konkretne dyscypliny sportowe jest kluczowy dla ochrony zawodników i użytkowników obiektów. Profesjonalne wyposażenie pozwala na pełną kontrolę nad jakością i bezpieczeństwem zajęć sportowych, niezależnie od warunków i intensywności treningów.
+
+                                       <p>Wyspecjalizowane marki oferują produkty o wysokiej trwałości i certyfikowanej jakości, co redukuje ryzyko awarii sprzętu i niepożądanych kosztów. Inwestycja w profesjonalny sprzęt sportowy to gwarancja bezpieczeństwa, komfortu i efektywności treningów.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="popular-topics">
+                    <div class="pop-top">
+                        <div class="title-pop-tp">
+                            <h1>Popularne podkategorie</h1>
+                        </div>
+                        <hr class="line-tpp">
+                        <div class="up-ctgr">
+                            <ul>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Tablice do koszykówki na hale sportowe</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Obręcze do koszykowki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do siatkówki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do tenisa ziemnego, tuleje</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Stoły do tenisa stołowego</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Tablice do koszykówki na hale sportowe</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Obręcze do koszykowki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do siatkówki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do tenisa ziemnego, tuleje</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Stoły do tenisa stołowego</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Tablice do koszykówki na hale sportowe</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Obręcze do koszykowki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do siatkówki</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Słupki do tenisa ziemnego, tuleje</h1></a></li>
+                                <li><a href="#" class="item-catg "><img src="./img/1.jpg" alt="icon"><h1>Stoły do tenisa stołowego</h1></a></li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section id="wdgt-trat">
+                    <div class="wgtt-cont">
+                        <div class="wgt-box">
+                            <a href="#">
+                                <span class="material-symbols-outlined wgtb-i">
+                                    delivery_truck_speed
+                                </span>
+                                <h1>Darmowa dostawa</h1>
+                                <p>dla zaówień powyzej 5 000 zł</p>
+                            </a>
+                        </div>
+                        <div class="wgt-box map-box">
+                            <a href="#">
+                                <span class="material-symbols-outlined wgtb-i">
+                                    pin_drop
+                                </span>
+                                <h1 style="color: white;">Nasze Realizacje</h1>
+                                <p style="color: white;">Zobacz wyposazone juz od nas obiekty sportowe</p>
+                                <span class="button">Otwórz mapę</span>
+                            </a>
+                        </div>
+                        <div class="wgt-box">
+                            <a href="#">
+                                <span class="material-symbols-outlined wgtb-i">
+                                    create_new_folder
+                                </span>
+                                <h1>Idividualne projekty</h1>
+                                <p></p>
+                            </a>
+                        </div>
+                        <div class="wgt-box">
+                            <a href="#">
+                                <span class="material-symbols-outlined wgtb-i">
+                                    sports
+                                </span>
+                                <h1>Doradztwo expertów</h1>
+                                <p></p>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <section id="inne-catgr">
+                    <div class="innctrg-contr">
+                        <div class="inctg-title">
+                            <h1>Inne kategorie</h1>
+                        </div>
+
+                        <div class="innctrg-contr-grid">
+                            <div class="innctgr-box">
+                                <img src="./img/01-03_City_map2v_generated.jpg" alt="zobacz">
+                                <div class="inctg-title">
+                                    <h2>cos</h2>
+                                    <i class="fa-solid fa-mountain-sun fa-xl" style="color: #000000;"></i>
+                                </div>
+                                <div class="inctg-links">
+                                    <ul>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                    </ul>
+
+                                    <div class="ul-topics-more">
+                                        <a href="#">more</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="innctgr-box">
+                                <img src="./img/01-03_City_map2v_generated.jpg" alt="zobacz">
+                                <div class="inctg-title">
+                                    <h2>cos</h2>
+                                    <i class="fa-solid fa-mountain-sun fa-xl" style="color: #000000;"></i>
+                                </div>
+                                <div class="inctg-links">
+                                    <ul>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                    </ul>
+
+                                    <div class="ul-topics-more">
+                                        <a href="#">more</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="innctgr-box">
+                                <img src="./img/01-03_City_map2v_generated.jpg" alt="zobacz">
+                                <div class="inctg-title">
+                                    <h2>cos</h2>
+                                    <i class="fa-solid fa-mountain-sun fa-xl" style="color: #000000;"></i>
+                                </div>
+                                <div class="inctg-links">
+                                    <ul>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                        <li><a href="#">link</a></li>
+                                    </ul>
+
+                                    <div class="ul-topics-more">
+                                        <a href="#">more</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="innctgr-box">
+                                <img src="./img/01-03_City_map2v_generated.jpg" alt="zobacz">
+                                <div class="inctg-title">
+                                    <h2>cos</h2>
+                                    <i class="fa-solid fa-mountain-sun fa-xl" style="color: #000000;"></i>
+                                </div>
+                                <div class="inctg-links">
+                                    <ul>
+                                        <li><a href="#">> link</a></li>
+                                        <li><a href="#">> link</a></li>
+                                        <li><a href="#">> link</a></li>
+                                        <li><a href="#">> link</a></li>
+                                        <li><a href="#">> link</a></li>
+                                        <li><a href="#">> link</a></li>
+                                    </ul>
+
+                                    <div class="ul-topics-more">
+                                        <a href="#">more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="more-inctg">
+                            <a href="#">Więcej &#8681;</a>
+                        </div>
+                    </div>
+                </section>
+                <section id="cmsbaner">
+                    <div class="cmsbanner-contr">
+                        <div class="cmsbanner-box part-1">
+                            <a href="#"><span class="cmsb-text">Zamów</span></a>
+                        </div>
+                        <div class="cmsbanner-box part-2">
+                            <a href="#"><span class="cmsb-text">Więcej  informacji</span></a>
+                        </div>
+                    </div>
+                </section>
+                <section id="new-products">
+                    <div class="contr-new-products">
+                        <a href="#">
+                            <h1>Odkryj nowości</h1>
+                            <p>
+                                Odkryj nasze nowe dzieła :) 
+                            </p>
+                            <span class="txt-new-products">zobacz pełną oferte <span style="font-size: 1.9rem;" class="material-symbols-outlined nw-pr-symbl">expand_circle_right</span></span>
+                        </a>
+                    </div>
+                </section>
+                <section id="blog">
+                    <div class="blog-cntr">
+                        <h1>Blog</h1>
+                        <div class="hr-line-blog"></div>
+                        <div class="blog-cards-cont">
+                            <div class="blog-card-box b-c-b-1">
+                                <a href="#">
+                                    <span class="data-blog">
+                                        20 sty, 2025
+                                    </span>
+                                    <h3>Czego nie powinno zabraknąć w sportowej szatni?</h3>
+                                    <p>
+                                        Szatnia sportowa zapewnia komfort przed i po treningu oraz odpowiednie warunki do...
+                                    </p>
+                                    <span class="more-blog">Więcej...</span>
+                                </a>
+                            </div>
+
+                            <div class="blog-card-box b-c-b-2">
+                                <a href="#">
+                                    <span class="data-blog">
+                                        20 sty, 2025
+                                    </span>
+                                    <h3>Czego nie powinno zabraknąć w sportowej szatni?</h3>
+                                    <p>
+                                        Szatnia sportowa zapewnia komfort przed i po treningu oraz odpowiednie warunki do...
+                                    </p>
+                                    <span class="more-blog">Więcej...</span>
+                                </a>
+                            </div>
+
+                            <div class="blog-card-box b-c-b-3">
+                                <a href="#">
+                                    <span class="data-blog">
+                                        20 sty, 2025
+                                    </span>
+                                    <h3>Czego nie powinno zabraknąć w sportowej szatni?</h3>
+                                    <p>
+                                        Szatnia sportowa zapewnia komfort przed i po treningu oraz odpowiednie warunki do...
+                                    </p>
+                                    <span class="more-blog">Więcej...</span>
+                                </a>
+                            </div>
+
+                            <div class="blog-card-box b-c-b-4">
+                                <a href="#">
+                                    <span class="material-symbols-outlined m-s-o-blog">
+                                        double_arrow
+                                    </span>
+                                    <h2>Przejdź <br>do bloga</h2>
+                                    <span class="more-blog">Więcej...</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <div class="navigation-cards">
+                    <div class="footer-nav-card">
+                        <h3>Produkty</h3>
+                        <div class="footer-hr-line"></div>
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-card">
+                        <h3>firma</h3>
+                        <div class="footer-hr-line"></div>
+                        <ul>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                            <li><a href="#"><i class="fa-solid fa-angle-right fa-2xs"></i>cos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-card contact-card-ftr">
+                        <h3>Kontakt</h3>
+                        <div class="footer-hr-line"></div>
+                        <ul>
+                            <li><a href="#" class="address-href"><i class="fa-solid fa-location-dot"></i> <p>SPORTPLUS.PL Sp. z o.o.ul.Słowackiego 75A32-400 MyślenicePolska</p></a></li>
+                            <li><a href="#" class="address-href-2"><i class="fa-solid fa-envelope fa-ms"></i>cos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-nav-card logo-card-footer">
+                        <img src="./img/logogog.png" alt="logo">
+                        <h3>firma</h3>
+                        <div class="footer-hr-line"></div>
+                        <p class="l-c-f-p">
+                                jest wiodącym europejskim dostawcą wyposażenia sportowego. Działalność rozpoczęliśmy w 1098 roku i od tego czasu nieustannie poszerzamy naszą ofertę zarówno handlową jak i produkcyjną.
+                            <p>Internetowy sklep sportowy powstał w 200 roku i nieustannie znajduje się w czołówce polskiego i europejskiego handlu e-commerce w branży artykułów sportowych i wyposażenia obiektów sportowych.
+                        </p>
+                    </div>
+                </div>
+                <div class="navigation-icons-end">
+                    <div class="left-footer-navi">
+                        <div class="media">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #0050db;"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #0050db;"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #0050db;"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook fa-2xl" style="color: #0050db;"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-facebook" style="color: #0050db;"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="left-navi-hr-line"></div>
+                        <div class="firma-ending-txt">
+                            <p>© This content may be used for educational purposes only.</p>
+                        </div>
+                    </div>
+                    <div class="right-payment-type">
+                        <ul>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                            <li><a href="#"><img src="./img/carte_bleue.png" alt="pay"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            });
+        </script>
+    </body>
+</html>
