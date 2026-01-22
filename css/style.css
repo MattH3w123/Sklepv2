@@ -1299,7 +1299,7 @@ section#widget-info {
     font-size: 1rem;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: #333333;
+    color: rgb(56, 100, 173);
     font-weight: 600;
 }
 
@@ -1307,7 +1307,7 @@ section#widget-info {
     font-size: 1rem;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    color: #333333;
+    color: rgb(112, 120, 130);
 }
 
 section#opis-1 {
@@ -1512,12 +1512,14 @@ section#opis-1 {
 
 .text-cont h1 {
     font-size: 2rem;
-    color: #1a1a1a;
+    color: rgb(56, 100, 173);
     margin-bottom: 1rem;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .text-cont p {
-    font-size: 1.14rem;
+    font-size: 1.17rem;
     line-height: 1.65;
     color: #4a4a4a;
     text-align: justify;
@@ -1567,7 +1569,7 @@ section#popular-topics {
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
     letter-spacing: .06rem;
-    color: black;
+    color: rgb(56, 100, 173);
     padding: 0px 0px 0px 15px;
 }
 
@@ -1637,19 +1639,20 @@ section#popular-topics {
 
 .item-catg h1 {
     font-size: 1rem;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
     font-weight: 500;
     line-height: 1.35;
     word-break: normal;
     hyphens: auto;
     margin: 0;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 section#wdgt-trat {
-    padding: 70px 0px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url(../img/1393763.jpg);
+    padding: 80px 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)), url(../img/newImgs/wdgetV2/3452.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1744,27 +1747,28 @@ section#wdgt-trat {
     width: 50%;
     height: auto;
     display: grid;
-    gap: 3rem;
+    gap: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
     justify-content: stretch;
     background-color: transparent;
-    border: 1px solid black;
+    padding: 1rem;
 }
 
 .wgt-box {
-    background: rgba(255, 255, 255, 0.42);
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.3px);
     -webkit-backdrop-filter: blur(5.3px);
-    border: 1px solid rgba(255, 255, 255, 0.09);
     border-radius: 20px;
     overflow: hidden;
     height: 320px;
+    transition: all .2s ease-in-out;
 }
 
 .map-box {
-    background: linear-gradient(160deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .6)), url(../img/01-03_City_map2v_generated.jpg) center center no-repeat;
+    background: linear-gradient(to left, rgba(0, 0, 0, .4), rgba(0, 0, 0, .76)), url(../img/newImgs/wdgetV2/map1.png) center center no-repeat;
     background-size: cover;
     outline: none;
     border: none;
@@ -1785,17 +1789,30 @@ section#wdgt-trat {
     hyphens: auto;
 }
 
+.wgt-box:hover {
+    transform: translateY(-3px);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.wgt-box a:hover span.wgtb-i {
+    color: #ff6a00;
+}
+
+
 .wgt-box a>span.wgtb-i {
     font-size: 3.3rem;
     margin-left: 15px;
-    color: #000;
+    color: #ff6a00b2;
+    transition: all .2s ease-in-out;
 }  
 
 .wgt-box a h1 {
     font-size: 2rem;
     letter-spacing: .05rem;
-    color: #000;
+    color: rgb(0, 170, 185);
     font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .wgt-box a p {
@@ -1803,24 +1820,32 @@ section#wdgt-trat {
     letter-spacing: .01rem;
     width: 100%;
     text-align: left;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: white;
 }
 
 span.button {
     margin-top: 10px;
     padding: .6rem 1rem;
     border-radius: 10px;
-    background-color: rgb(240, 240, 240);
-    color: black;
+    background-color: transparent;
+    background-color: rgba(255, 106, 0, 0.144);
+    border: 1px solid rgb(255, 106, 0);
+    color: rgb(255, 255, 255);
     font-size: 1.1rem;
-    transition: .14s ease-in-out;
+    transition: .2s ease-in-out;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .wgt-box a:hover span.button {
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(255, 106, 0);
 }
 
 section#inne-catgr {
     padding: 45px 0px;
+    background-color: rgb(245,247,250);
 }
 
 @media (max-width: 1700px) {
@@ -1889,9 +1914,10 @@ section#inne-catgr {
     width: 100%;
     height: auto;
     display: grid;
-    gap: 1rem;
+    gap: 3rem;
     grid-template-columns: repeat(auto-fit, minmax(260px, 2fr));
     justify-content: stretch;
+    align-items: start;
 }
 
 .innctgr-box {
@@ -1902,7 +1928,8 @@ section#inne-catgr {
     gap: 10px;
     background-color: transparent;
     padding: 1%;
-    max-width: 260px;
+    width: 100%;
+    max-width: none; 
 }
 
 .innctgr-box img {
@@ -1924,10 +1951,20 @@ section#inne-catgr {
     align-items: center;
 }
 
-.inctg-title h2 {
-    font-size: 1.6rem;
-    color: #000;
+.inctg-title h1 {
+    font-size: 2rem;
+    color: rgb(56, 100, 173);
     font-weight: 600;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}
+
+.inctg-title h2 {
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 } 
 
 .inctg-links {
@@ -1964,13 +2001,15 @@ section#inne-catgr {
     width: 100%;
     height: auto;
     letter-spacing: .06rem;
-    font-size: 1.15rem;
+    font-size: 1rem;
     line-height: 1.4;
     margin-bottom: 0.2em;
     color: #000;
-    font-weight: 500;
+    font-weight: 300;
     padding: 3px 0px 3px 5px;
     transition: all .15s ease-in-out;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
 }
 
 .inctg-links ul li a:hover {
@@ -1989,15 +2028,18 @@ section#inne-catgr {
 .ul-topics-more a {
     width: 100%;
     height: auto;
-    padding: 4px 0px;
+    padding: 5px 0px;
     text-align: center;
     letter-spacing: .1rem;
     color: #000;
     background-color: transparent;
     text-decoration: none;
     transition: all .14s ease-in-out;
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    border-bottom: 1px solid #949494;
 }
 
 .ul-topics-more a:hover {
