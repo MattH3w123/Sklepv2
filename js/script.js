@@ -83,4 +83,52 @@ function closeSideBar() {
   navbar.setAttribute('inert', '')
 }
 
-updateNavbar(media)
+updateNavbar(media);
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+document.querySelectorAll('[data-animate]').forEach(el => {
+  observer.observe(el);
+});
+
+// different
+
+const groups = document.querySelectorAll('.animation-group');
+
+groups.forEach(group => {
+  const items = [...group.querySelectorAll('[data-animation]')];
+
+  const observer2 = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const index = items.indexOf(entry.target);
+        entry.target.style.transitionDelay = `${index * 100}ms`;
+        entry.target.classList.add('show-animation');
+        observer2.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  items.forEach(el => observer2.observe(el));
+});
+
+const oglTitle = document.title;
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      document.title = "Fuck you!";
+    } else {
+      document.title = oglTitle;
+    }
+  });
