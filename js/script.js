@@ -127,8 +127,28 @@ const oglTitle = document.title;
 
   document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-      document.title = "Fuck you!";
+      document.title = "Reviens!";
     } else {
       document.title = oglTitle;
     }
   });
+
+function ToggleSubMenu(button) {
+  button.nextElementSibling.classList.toggle('show-navbr-drop');
+
+  const icon = button.querySelector('.navbar-i-icon');
+  icon.classList.toggle('rotate');
+}
+
+document.querySelectorAll('.mega-left li').forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    document
+      .querySelectorAll('.mega-left li, .mega-panel')
+      .forEach(el => el.classList.remove('active'));
+
+    item.classList.add('active');
+    document
+      .getElementById(item.dataset.target)
+      .classList.add('active');
+  });
+});

@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Like you!</title>
+        <title>Bonjour!</title>
         <link rel="stylesheet" href="./css/style.css">
         <script type="text/javascript" src="./js/script.js" defer></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
@@ -12,9 +12,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-        <link rel="icon" href="./img/newImgs/logoing.jpg" type="image/icon">
+        <link rel="icon" href="./img/logoIcon.png" type="image/icon">
     </head>
     <body>
+        <div class="welcome-screen" id="hello">
+            <img src="./img/logoIcon.png" alt="logo">
+        </div>
         <div class="container">
             <header class="animate-slide-fr-top" data-animate>
                 <span class="top-questions top-questions-disaper">
@@ -24,8 +27,8 @@
                         <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">star</span> <span class="hver-line">4.3 opinie</span></a>
                         <a href="#" class="tq-l-bt opinie"><span class="icon-sz material-symbols-outlined">chat_add_on</span> <span class="hver-line">Kontakt</span></a>
                         <a href="#" class="tq-l-bt questions"><span class="hver-line">Zapytania (<span id="quests-watch">0</span>)</span></a>
-                        <div class="tq-l-bt" onclick=""><span class="contr"><span class="hver-line"><span id="flag"></span>Polski</span><span class="icon-sz material-symbols-outlined">arrow_drop_down</span></span></div>
-                        <div class="tq-l-bt"><span class="contr"><span class="hver-line">PLN</span><span class="icon-sz material-symbols-outlined">arrow_drop_down</span></span></div>
+                        <div class="tq-l-bt" onclick=""><span class="contr"><span class="hver-line"><span id="flag"></span>Polski</span><!--<span class="icon-sz material-symbols-outlined">arrow_drop_down</span>--></span></div> <!--ZROBIE TO KIEDYŚ, WIZUALIZACJA JEST GOTOWA -->
+                        <div class="tq-l-bt"><span class="contr"><span class="hver-line">PLN</span><!--<span class="icon-sz material-symbols-outlined">arrow_drop_down</span>--></span></div>
                     </div>
                 </span>
                 <span class="header-padding">
@@ -51,28 +54,92 @@
                                 <span  class="material-symbols-outlined mobile-header-top-btn">menu</span>
                             </button>
                             <div class="navbar-mobile" id="NavBar">
-                                <button onclick="closeSideBar()" aria-label="close sidebar">
+                                <button class="close-btn" onclick="closeSideBar()" aria-label="close sidebar">
+                                    <img src="./img/logogog.png" alt="logo">
                                     <span class="material-symbols-outlined navbar-mobile-close">close</span>
                                 </button>
-                                <nav>
+                                <nav id="sidebar">
                                     <ul>
-                                        <li><a href="#" aria-current="page">Kategorie<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                        <li><a href="#">Zakres działalności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
-                                            <ul class="drop">
-                                                <li><a href="#">Sprzęt sportowy dla szkół</a></li>
-                                                <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                                <li><a href="#">itemek</a></li>
-                                            </ul>   
+                                        <li>
+                                            <button onclick="ToggleSubMenu(this)" class="dropdown-btn">
+                                                <span>Zakres działalaności</span>
+                                                <i class="fa-solid fa-caret-down fa-lg navbar-i-icon"></i>
+                                            </button>
+                                            <div class="sub-menu">
+                                                <ul>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                </ul> 
+                                            </div>
                                         </li>
-                                        <li><a href="#">Do pobrania<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                        <li><a href="#">Kontakt<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                        <li><a href="#">firma<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                        <li><a href="#">Aktualności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                        <li>
+                                            <button onclick="ToggleSubMenu(this)" class="dropdown-btn">
+                                                <span>Zakres działalaności</span>
+                                                <i class="fa-solid fa-caret-down fa-lg navbar-i-icon"></i>
+                                            </button>
+                                            <div class="sub-menu">
+                                                <ul>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                </ul> 
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button onclick="ToggleSubMenu(this)" class="dropdown-btn">
+                                                <span>Zakres działalaności</span>
+                                                <i class="fa-solid fa-caret-down fa-lg navbar-i-icon"></i>
+                                            </button>
+                                            <div class="sub-menu">
+                                                <ul>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                </ul> 
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button onclick="ToggleSubMenu(this)" class="dropdown-btn">
+                                                <span>Zakres działalaności</span>
+                                                <i class="fa-solid fa-caret-down fa-lg navbar-i-icon"></i>
+                                            </button>
+                                            <div class="sub-menu">
+                                                <ul>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                </ul> 
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <button onclick="ToggleSubMenu(this)" class="dropdown-btn">
+                                                <span>Zakres działalaności</span>
+                                                <i class="fa-solid fa-caret-down fa-lg navbar-i-icon"></i>
+                                            </button>
+                                            <div class="sub-menu">
+                                                <ul>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                    <li><a href="#">folder</a></li>
+                                                </ul> 
+                                            </div>
+                                        </li>
                                     </ul>
                                 </nav>
                                 <div class="cntrls navbar-cntrls">
@@ -95,7 +162,71 @@
                     <div class="header-bottom">
                         <nav>
                             <ul>
-                                <li><a href="#">Kategorie<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li class="mega-manu-drop">
+                                    <a href="#">Kategorie<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                    <div class="mega-menu">
+                                        <ul class="mega-left">
+                                            <li class="active" data-target="cate1">
+                                                <span>Kategoria </span>
+                                            </li>
+                                             <li data-target="cate2">
+                                                <span>Kategoria </span>
+                                            </li>
+                                             <li data-target="cate3">
+                                                <span>Kategoria </span>
+                                            </li>
+                                        </ul>
+                                        <div class="mega-right">
+                                            <div class="mega-panel active" id="cate1">
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+
+                                            </div>
+                                            <div class="mega-panel" id="cate2">
+                                               <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                            </div>
+                                            <div class="mega-panel" id="cate3">
+                                               <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                                <a href="#">cos</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li><a href="#">Zakres działalności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
                                     <ul class="drop">
                                         <li><a href="#">Sprzęt sportowy dla szkół</a></li>
@@ -108,10 +239,54 @@
                                         <li><a href="#">itemek</a></li>
                                     </ul>   
                                 </li>
-                                <li><a href="#">Do pobrania<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                <li><a href="#">Kontakt<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                <li><a href="#">firma<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
-                                <li><a href="#">Aktualności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a></li>
+                                <li><a href="#">Do pobrania<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                <ul class="drop">
+                                        <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                        <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                    </ul>   
+                                </li>
+                                <li><a href="#">Kontakt<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                <ul class="drop">
+                                        <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                        <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                    </ul>   
+                                </li>
+                                <li><a href="#">firma<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                <ul class="drop">
+                                        <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                        <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                    </ul>   
+                                </li>
+                                <li><a href="#">Aktualności<span class="icon-sz material-symbols-outlined">arrow_drop_down</span></a>
+                                    <ul class="drop">
+                                        <li><a href="#">Sprzęt sportowy dla szkół</a></li>
+                                        <li><a href="#">Wyposażenie boiskj i stadionów</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                        <li><a href="#">itemek</a></li>
+                                    </ul>   
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -601,7 +776,7 @@
                         <h1 class="animation-left-wellcome" data-animation>Blog</h1>
                         <div class="hr-line-blog"></div>
                         <div class="blog-cards-cont">
-                            <div class="blog-card-box b-c-b-1 animation-showing-fade" data-animation>
+                            <div class="blog-card-box b-c-b-1 animation-slide-up" data-animation>
                                 <a href="#">
                                     <span class="data-blog">
                                         20 sty, 2025
@@ -614,7 +789,7 @@
                                 </a>
                             </div>
 
-                            <div class="blog-card-box b-c-b-2 animation-showing-fade" data-animation>
+                            <div class="blog-card-box b-c-b-2 animation-slide-up" data-animation>
                                 <a href="#">
                                     <span class="data-blog">
                                         20 sty, 2025
@@ -627,7 +802,7 @@
                                 </a>
                             </div>
 
-                            <div class="blog-card-box b-c-b-3 animation-showing-fade" data-animation>
+                            <div class="blog-card-box b-c-b-3 animation-slide-up" data-animation>
                                 <a href="#">
                                     <span class="data-blog">
                                         20 sty, 2025
@@ -640,7 +815,7 @@
                                 </a>
                             </div>
 
-                            <div class="blog-card-box b-c-b-4 animation-showing-fade" data-animation>
+                            <div class="blog-card-box b-c-b-4 animation-slide-up" data-animation>
                                 <a href="#">
                                     <span class="material-symbols-outlined m-s-o-blog">
                                         double_arrow
